@@ -6,15 +6,14 @@ loginForm.addEventListener("submit", function (event) {
   const emailInput = loginForm.elements.email;
   const passwordInput = loginForm.elements.password;
 
-  if (emailInput.value === "" || passwordInput.value === "") {
-    alert("Please fill in all fields.");
-  } else {
-    const loginData = {
-      email: emailInput.value,
-      password: passwordInput.value,
-    };
-
-    console.log(loginData);
-    loginForm.reset();
+  if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+    return alert("Please fill in all fields.");
   }
+  const loginData = {
+    email: emailInput.value,
+    password: passwordInput.value,
+  };
+
+  console.log(loginData);
+  loginForm.reset();
 });
